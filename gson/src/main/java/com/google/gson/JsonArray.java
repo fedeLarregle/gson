@@ -111,7 +111,9 @@ public final class JsonArray extends JsonElement implements Iterable<JsonElement
    * @param array the array whose elements need to be added to the array.
    */
   public void addAll(JsonArray array) {
-    elements.addAll(array.elements);
+    for (JsonElement element : array) {
+      this.add(element);
+    }
   }
 
   /**
