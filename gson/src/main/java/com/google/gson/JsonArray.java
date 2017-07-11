@@ -102,10 +102,7 @@ public final class JsonArray extends JsonElement implements Iterable<JsonElement
    * @param element the element that needs to be added to the array.
    */
   public void add(JsonElement element) {
-    if (element == null) {
-      element = JsonNull.INSTANCE;
-    }
-    elements.add(element);
+    elements.add(element == null ? JsonNull.INSTANCE : element);
   }
 
   /**
